@@ -1,3 +1,13 @@
-<p>
-  resume-form-marital-status works!
-</p>
+<mat-form-field>
+  <mat-label>Семейное положение</mat-label>
+  <mat-select>
+    <mat-option value="2">женат</mat-option>
+    <mat-option value="3">замужем</mat-option>
+    <mat-option value="1">в разводе</mat-option>
+    <mat-option value="0">нет</mat-option>
+  </mat-select>
+</mat-form-field>
+
+Присутствие пунктов женат/замужем взаимоисключающее в зависимости от пола но имеют разные значения
+Поле является обязательным к заполнению если Дата рождения больше 18 лет По умолчанию значение из списка не выбрано.
+значение "нет" не является значением по умолчанию

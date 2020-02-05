@@ -10,16 +10,19 @@ import { ResumeFormNameComponent } from './resume-form/resume-form-name/resume-f
 import { ResumeFormSexComponent } from './resume-form/resume-form-sex/resume-form-sex.component';
 import { ResumeFormBirthdateComponent } from './resume-form/resume-form-birthdate/resume-form-birthdate.component';
 import { ResumeFormMaritalStatusComponent } from './resume-form/resume-form-marital-status/resume-form-marital-status.component';
-import { ResumeFormChildrenComponent } from './resume-form/resume-form-children/resume-form-children.component';
+import { ResumeFormChildrenCountComponent } from './resume-form/resume-form-children/resume-form-children-count.component';
 import { ResumeFormEmailComponent } from './resume-form/resume-form-email/resume-form-email.component';
 import { ResumeFormCommentComponent } from './resume-form/resume-form-comment/resume-form-comment.component';
 import { ResumeFormSaveButtonComponent } from './resume-form/resume-form-save-button/resume-form-save-button.component';
-import {MatButtonModule, MatFormFieldModule, MatInputModule} from "@angular/material";
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule} from "@angular/material";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const angularMaterialModules = [
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatRadioModule,
+  MatSelectModule
 ];
 
 @NgModule({
@@ -31,7 +34,7 @@ const angularMaterialModules = [
     ResumeFormSexComponent,
     ResumeFormBirthdateComponent,
     ResumeFormMaritalStatusComponent,
-    ResumeFormChildrenComponent,
+    ResumeFormChildrenCountComponent,
     ResumeFormEmailComponent,
     ResumeFormCommentComponent,
     ResumeFormSaveButtonComponent
@@ -40,7 +43,9 @@ const angularMaterialModules = [
     ...angularMaterialModules,
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

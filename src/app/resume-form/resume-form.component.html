@@ -1,20 +1,26 @@
-<form>
-  <app-resume-form-name></app-resume-form-name>
-  <app-resume-form-sex></app-resume-form-sex>
-  <app-resume-form-birthdate></app-resume-form-birthdate>
-  <app-resume-form-marital-status></app-resume-form-marital-status>
-  <app-resume-form-children></app-resume-form-children>
-  <app-resume-form-email></app-resume-form-email>
-  <app-resume-form-comment></app-resume-form-comment>
-  <app-resume-form-save-button></app-resume-form-save-button>
+<form [formGroup]="resumeForm">
+  <mat-form-field>
+    <app-resume-form-name placeholder="Ф.И.О." required formControlName="name"></app-resume-form-name>
+  </mat-form-field>
+  <mat-form-field>
+    <app-resume-form-sex formControlName="sex"></app-resume-form-sex>
+  </mat-form-field>
+  <mat-form-field>
+    <app-resume-form-birthdate formControlName="birthdate"></app-resume-form-birthdate>
+  </mat-form-field>
+  <mat-form-field>
+    <app-resume-form-marital-status formControlName="martialStatus"></app-resume-form-marital-status>
+  </mat-form-field>
+  <mat-form-field>
+    <app-resume-form-children-count placeholder="Количество детей" formControlName="childrenCount"></app-resume-form-children-count>
+  </mat-form-field>
+  <mat-form-field>
+    <app-resume-form-email formControlName="email"></app-resume-form-email>
+  </mat-form-field>
+  <mat-form-field>
+    <app-resume-form-comment formControlName="comment"></app-resume-form-comment>
+  </mat-form-field>
+  <button mat-button>Click me!</button>
+  <!--
+  <app-resume-form-save-button></app-resume-form-save-button>-->
 </form>
-
-
-ФИО (одно поле с текстом / можно вводить только на русском языке /поле обязательно для заполнения / отчество не обязательно)
-Пол (radio-button с выбором М/Ж обязательно для заполнения)
-Дата рождения (datepicker) - обязательно для заполнения. Если больше 18 лет выводить поле семейное положение
-Поле семейное положение - выпадающий список (женат/замужем/в разводе/нет) Присутствие пунктов женат/замужем взаимоисключающее в зависимости от пола но имеют разные значения Поле является обязательным к заполнению если Дата рождения больше 18 лет По умолчанию значение из списка не выбрано. значение "нет" не является значением по умолчанию
-Количество детей (можно вводить толко числа. компонент должен реагировать на клавиши "+" и "-" )
-Email (обязательно для заполнения)
-Поле комментарий - текст не обязательно для заполнения (может содержать только кирилицу)
-Кнопка сохранить (по нажатию валидировать форму и если все ок - оправлять данные в сервис и перенаправляем пользователя на вторую станицу с отличным урл)
